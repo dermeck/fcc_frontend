@@ -12,3 +12,16 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+#mr-about-me {
+    padding: 40px 15px 10px;
+}
+
+#mr-social {
+    padding-top: 20px;
+}
+
+.mdi {
+    margin-left: -10px;
+    margin-right: 10px;
+}
