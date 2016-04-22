@@ -6,6 +6,26 @@
  * Made By MaterializeCSS.com
  */
 
+/*** COLORS ***/
+
+/* FORM FOCUS */
+/* label focus color */
+.input-field input[type=text]:focus + label,
+.input-field input[type=email]:focus + label,
+#mr-contact textarea:focus + label{
+    color: #64b5f6;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus,
+.input-field input[type=email]:focus,
+#mr-contact textarea:focus
+{
+    border-bottom: 1px solid #64b5f6;
+    box-shadow: 0 1px 0 0 #64b5f6 ;
+}
+
+/******/
+
 .icon-block {
   padding: 0 15px;
 }
@@ -21,7 +41,7 @@
     padding-top: 20px;
 }
 
-.mdi {
+#mr-social .mdi {
     margin-left: -10px;
     margin-right: 10px;
 }
