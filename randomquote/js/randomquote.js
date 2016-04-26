@@ -25,6 +25,12 @@ function getRandomQuote() {
             // set content
             $('#quote').text(quote);
             $('#author').text(author);
+
+            // Twitter URL
+            var twitterUrl = "https://twitter.com/intent/tweet?button_hashtag=randomquote&text=";
+            twitterUrl += quote + "\n-" + author;
+
+            $(".twitter-hashtag-button").attr('href', twitterUrl);
         }
     })
 }
