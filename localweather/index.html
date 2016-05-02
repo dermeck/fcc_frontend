@@ -1,25 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Local Weather</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Local Weather</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="//cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/weathericons.css">
+
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="//cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css" media="all" rel="stylesheet"
+          type="text/css"/>
 
 </head>
 <body>
 
+<div class="container center-align">
 
+    <div id="main-content-wrapper">
+        <div id="main-content" class="card hoverable">
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+            <div class="card-content left-align">
+                <div class="row">
 
-  </body>
+                    <div class="col s12 m12 right-align">
+                <span id="location">
+                    Lübeck
+                </span>
+                        <p id="weather-condition">
+                            sonnig
+                        </p>
+                        <!--<div class="right-align grey-text"><em>&mdash; <span id="author">-->
+                        <!--Dave McClure-->
+                        <!--</span></em></div>-->
+                    </div>
+                </div> <!-- row -->
+
+                <div id="weather-icon-row" class="row">
+                    <div class="col m12 center-align">
+                        <div class="icon sun-shower">
+                            <div class="cloud"></div>
+                            <div class="sun">
+                                <div class="rays"></div>
+                            </div>
+                            <div class="rain"></div>
+                        </div>
+
+                        <!--<div class="icon thunder-storm">-->
+                            <!--<div class="cloud"></div>-->
+                            <!--<div class="lightning">-->
+                                <!--<div class="bolt"></div>-->
+                                <!--<div class="bolt"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="icon cloudy">-->
+                            <!--<div class="cloud"></div>-->
+                            <!--<div class="cloud"></div>-->
+                        <!--</div>-->
+
+                        <!--<div class="icon flurries">-->
+                            <!--<div class="cloud"></div>-->
+                            <!--<div class="snow">-->
+                                <!--<div class="flake"></div>-->
+                                <!--<div class="flake"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="icon sunny">-->
+                            <!--<div class="sun">-->
+                                <!--<div class="rays"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                        <!--<div class="icon rainy">-->
+                            <!--<div class="cloud"></div>-->
+                            <!--<div class="rain"></div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+
+                <div id="temp-row" class="row">
+                    <div class="col m12 center-align">
+
+                <span id="temp-value">
+                    20
+                </span>
+                        <span id="temp-unit">°C</span>
+                    </div>
+
+                </div>
+
+                <div class="card-action center-align">
+                    <!--<a id="get-quote-btn" class="waves-blue  btn-flat" role="button" href="javascript:void(0);">New-->
+                        <!--Quote</a>-->
+                </div>
+
+                <!--<a href="" class="twitter-hashtag-button" target="_blank" a><i class="twitter-box"></i><i class="mdi mdi-twitter-box"></i></a>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
+</body>
 </html>
