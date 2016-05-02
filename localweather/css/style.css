@@ -38,3 +38,7 @@ body {
 #weather-icon-row.row {
     margin-bottom: 0;
 }
+
+#weather-icon .icon {
+    display: none; /* hide weather icons */
+}
