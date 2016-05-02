@@ -114,9 +114,18 @@ function updateUi(data) {
     $('#temp-value').text(round(tempValue, 1));
 
 
-    // additional icons https://materialdesignicons.com/ "weather" "humig"  (Niederschlagwahrscheinlichkeit (Regenschirm), Luftfeuchtigkeit (Tropfen %), Windgeschw, Sonnenaufgang/Untergang
+    // additional data
+    $('#wind-speed').text(round(data.wind.speed, 1) + " m/s")
 
-    // TODO Temp switch icons celsius, fahren
+    $('#humidity').text(round(data.main.humidity, 1) + " %")
+
+    var t = new Date(data.sys.sunrise * 1000);
+    var formatted = t.getHours() + ":" + t.getMinutes();
+    $('#sunset-up').text(formatted);
+
+    t = new Date(data.sys.sunset * 1000);
+    formatted = t.getHours() + ":" + t.getMinutes();
+    $('#sunset-down').text(formatted);
 }
 
 function kelvinToCelsius(temp) {

@@ -46,3 +46,25 @@ body {
 #temp-unit {
     cursor: pointer;
 }
+
+.card .card-action {
+    padding: 5px;
+    border: none;
+}
+
+.card-action .mdi {
+    font-size: 20px;
+    margin-right: 3px;
+}
+
+.card-action .row {
+    margin-bottom: -10px;
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-top: -5px;
+    padding-top: 2px;
+    padding-botton: 2px;
+    background: #343436;
+    /*border-top: 1px solid rgba(160, 160, 160, 0.2);*/
+    opacity:.6;
+}
