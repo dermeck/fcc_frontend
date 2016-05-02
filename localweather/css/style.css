@@ -42,3 +42,7 @@ body {
 #weather-icon .icon {
     display: none; /* hide weather icons */
 }
+
+#temp-unit {
+    cursor: pointer;
+}

@@ -1,12 +1,16 @@
+
 $(document).ready(function () {
 
     $.getJSON('http://ipinfo.io', function(data){
-        // console.log(data);
 
         var loc = data.loc.split(",");
 
         getLocalWeather(loc[0], loc[1]);
     })
+
+    $('#temp-unit').on('click', function (data) {
+        switchTempUnit(data, $(this));
+    });
 });
 
 /**
@@ -58,6 +62,31 @@ function setWeatherIcon(weatherId) {
     }
 }
 
+function switchTempUnit(data, target) {
+    if (target.hasClass("mdi-temperature-celsius")) {
+        // celsius to fahrenheit
+        target.removeClass('mdi-temperature-celsius');
+        target.addClass('mdi-temperature-fahrenheit');
+
+        var el = $('#temp-value');
+        var f = el.text() * 1.800 + 32;
+        el.text(round(f, 1));
+
+    } else {
+        // fahrenheit to celsius
+        if (target.hasClass("mdi-temperature-fahrenheit")) {
+            // fahrenheit to celsius
+            target.removeClass('mdi-temperature-fahrenheit');
+            target.addClass('mdi-temperature-celsius');
+
+            var el = $('#temp-value');
+            var c = (el.text() - 32) / 1.800;
+            el.text(round(c, 1));
+        }
+    }
+}
+
+
 /**
  * Populate UI with weather data
  *
@@ -74,15 +103,24 @@ function updateUi(data) {
 
     // weather condition
     var descr = data.weather[0].description;
-    console.log(descr);
     $('#weather-condition').text(descr);
 
     setWeatherIcon(data.weather[0].id);
 
+    // temperature
+    var temp = data.main.temp; // Kelvin
+
+    var tempValue = kelvinToCelsius(temp);
+    $('#temp-value').text(round(tempValue, 1));
 
 
+    // additional icons https://materialdesignicons.com/ "weather" "humig"  (Niederschlagwahrscheinlichkeit (Regenschirm), Luftfeuchtigkeit (Tropfen %), Windgeschw, Sonnenaufgang/Untergang
 
-// get geo coordinates of user (modernizr?)
+    // TODO Temp switch icons celsius, fahren
+}
+
+function kelvinToCelsius(temp) {
+    return temp -273.15;
 }
 
 /**
@@ -97,7 +135,7 @@ function getLocalWeather(latitude, longitude) {
     var appId= "&APPID=" + "73683088432bf424ffcc937004bd296d";
 
     var url = baseUrl + loc + appId;
-    console.log(url);
+    // console.log(url);
 
     $.ajax({
         url: url,
@@ -108,4 +146,8 @@ function getLocalWeather(latitude, longitude) {
             updateUi(data);
         }
     });
+}
+
+function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
