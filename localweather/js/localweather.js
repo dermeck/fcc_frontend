@@ -48,8 +48,13 @@ function getLocalWeather(latitude, longitude) {
     var url = baseUrl + loc + appId;
     console.log(url);
 
-    $.getJSON(url, function (data) {
-        console.log(data);
-        updateUi(data);
-    })
+    $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'jsonp',
+        success: function (data) {
+            console.log(data);
+            updateUi(data);
+        }
+    });
 }
