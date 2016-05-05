@@ -83,3 +83,7 @@ table tbody tr td:last-child {
     width: 90%;
     margin-top: 10px;
 }
+
+table a {
+    color: rgb(99, 151, 172);
+}

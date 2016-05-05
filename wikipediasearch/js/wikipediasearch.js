@@ -53,28 +53,18 @@ function displayResults(data) {
         var searchResultArray = data.query.search;
         var html ="";
 
-
         searchResultArray.forEach(function (value) {
-            html += "<tr><td>";
-            html+= value.title;
+            html += "<tr><td><a href=\"https://en.wikipedia.org/wiki/" + value.title + "\" target='_blank'>";
+            html+= value.title + "</a>";
             html += "</td><td>";
             html+=value.snippet;
+            html+="</td></tr>"
 
             // console.log(value);
-            // console.log(value.title);
-
-
-
-            html+="</td></tr>"
         });
 
-        console.log(data.query.search);
-
-        // clear table
+        // console.log(data.query.search);
 
         resultTable.html(html);
-
-
-        // TODO ... update ui
     }
 }
