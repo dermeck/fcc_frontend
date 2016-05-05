@@ -5,7 +5,12 @@ $(document).ready(function () {
     $('#search-icon').on('click', performSearch);
 
 
-    // performSearch();
+    $('#search').keypress(function (e) {
+        if(e.which == 13) {
+            // ENTER
+            performSearch();
+        }
+    })
 });
 
 function registerStyleChangeEvents() {
@@ -64,7 +69,6 @@ function displayResults(data) {
         });
 
         // console.log(data.query.search);
-
         resultTable.html(html);
     }
 }
