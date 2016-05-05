@@ -26,6 +26,11 @@ body {
     margin-bottom: 50px;
 }
 
+.random-article a i {
+    color: rgb(99, 151, 172);
+    font-size: 49px;
+}
+
 /** Search Box Styles **/
 .search-wrapper {
     margin: 0 12px 0 12px;
