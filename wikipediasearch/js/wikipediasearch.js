@@ -45,14 +45,36 @@ function performSearch() {
 
 function displayResults(data) {
 
-    var searchResultArray = data.query.search;
+    // clear table
+    var resultTable = $('#search-results');
+    resultTable.html("");
 
-    searchResultArray.forEach(function (value) {
-        console.log(value);
-        console.log(value.title);
-    });
+    if (data) {
+        var searchResultArray = data.query.search;
+        var html ="";
 
-    console.log(data.query.search);
 
-    // TODO ... update ui
+        searchResultArray.forEach(function (value) {
+            html += "<tr><td>";
+            html+= value.title;
+            html += "</td><td>";
+            html+=value.snippet;
+
+            // console.log(value);
+            // console.log(value.title);
+
+
+
+            html+="</td></tr>"
+        });
+
+        console.log(data.query.search);
+
+        // clear table
+
+        resultTable.html(html);
+
+
+        // TODO ... update ui
+    }
 }
